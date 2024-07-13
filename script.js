@@ -115,3 +115,110 @@ console.log(names);
 // #22
 names = ['sixten', 'Eva', 'Ali', 'Kim', 'Greger', 'Alicia'];
 console.log(names.includes('Ewa')); // false
+
+// #23
+for (let i = 1; i <= 1000; i++) {
+    console.log(i);
+};
+
+// #24
+for (let i = 100; i >= 0; i--) {
+    console.log(i);
+};
+
+// #25
+fruits = ['apple', 'orange', 'pear', 'kiwi', 'pineapple'];
+fruits.forEach(e => console.log(e));
+// apple
+// orange
+// pear
+// kiwi
+// pineapple
+
+// #26
+fruits.forEach((e, i) => console.log(`${i}. ${e}`));
+// 0. apple
+// 1. orange
+// 2. pear
+// 3. kiwi
+// 4. pineapple
+
+// #27
+const suits = ['hearts', 'clubs', 'dimonds', 'spades'];
+let cards = [];
+for (let i = 2; i < 15; i++) {
+    for (let y = 0; y < suits.length; y++) {
+        cards.push(`${suits[y]} ${i}`);
+    };
+};
+console.log(cards);
+// [
+//     'hearts 2',  'clubs 2',  'dimonds 2',  'spades 2',
+//     'hearts 3',  'clubs 3',  'dimonds 3',  'spades 3',
+//     'hearts 4',  'clubs 4',  'dimonds 4',  'spades 4',
+//     'hearts 5',  'clubs 5',  'dimonds 5',  'spades 5',
+//     'hearts 6',  'clubs 6',  'dimonds 6',  'spades 6',
+//     'hearts 7',  'clubs 7',  'dimonds 7',  'spades 7',
+//     'hearts 8',  'clubs 8',  'dimonds 8',  'spades 8',
+//     'hearts 9',  'clubs 9',  'dimonds 9',  'spades 9',
+//     'hearts 10', 'clubs 10', 'dimonds 10', 'spades 10',
+//     'hearts 11', 'clubs 11', 'dimonds 11', 'spades 11',
+//     'hearts 12', 'clubs 12', 'dimonds 12', 'spades 12',
+//     'hearts 13', 'clubs 13', 'dimonds 13', 'spades 13',
+//     'hearts 14', 'clubs 14', 'dimonds 14', 'spades 14'
+//   ]
+
+// #28
+let book = {
+    title: '',
+    author: '',
+    genres: []
+};
+
+// #29
+let person = {
+    name: 'Sixten Faceplant',
+    email: 'sixten.faceplant@zocom.se',
+    role: 'ninjah',
+    adress: {
+        street: 'Karatevägen 3',
+        zip: '41477',
+        city: 'Kablam City'
+    }
+};
+console.log(person.adress.city); // Kablam City
+
+// #30
+let personCopy = {...person};
+console.log(personCopy);
+// {
+//     name: 'Sixten Faceplant',
+//     email: 'sixten.faceplant@zocom.se',
+//     role: 'ninjah',
+//     adress: { street: 'Karatevägen 3', zip: '41477', city: 'Kablam City' }
+// }
+
+// #31
+let dog = {
+    name: 'Ozzy',
+    breed: 'bulli',
+    bark() {
+        return `Woff, jag heter ${this.name}!`;
+    }
+};
+console.log(dog.bark()); // Woff, jag heter Ozzy!
+
+// #32
+person = { 
+    name: 'sixten',
+    email: 'sixten@zocom.se', 
+    role: 'ninjah',
+    age: 32 
+};
+for (const [key, value] of Object.entries(person)) {
+    console.log(`${key} - ${value}`);
+};
+// name - sixten
+// email - sixten@zocom.se
+// role - ninjah
+// age - 32
