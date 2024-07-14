@@ -222,3 +222,40 @@ for (const [key, value] of Object.entries(person)) {
 // email - sixten@zocom.se
 // role - ninjah
 // age - 32
+
+// #33
+function add(x, y) {
+    return x + y;
+};
+console.log(add(8, 10));
+
+// #34
+let desc = () => {
+    return 'Description av anonyma och namnade funktioner: ...';
+};
+console.log(desc());
+
+// #35
+function getYear(date) {
+    return date.substring(0, 4);
+};
+console.log('2019-10-14'); // 2019-10-14
+
+// #36
+function calculate(a, b, operation) {
+    switch (operation) {
+        case '+':
+            return a + b;
+        case '-':
+            return a - b;
+        case '*':
+            return a * b;
+        case '/':
+            return a / b;
+        default:
+            return 'Somthing went wrong!'; 
+    };
+};
+console.log(calculate(12, 3, '/'));
+console.log(calculate(4, 3, '*'));
+console.log(calculate(12, 2, ':'));
