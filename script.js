@@ -313,3 +313,43 @@ console.log(randomPassword(10)); // e3va93hlfz
 // #45
 names = ['Sixten', 'Eva', 'Ali', 'Kim', 'Greger', 'Alicia'];
 console.log(names[Math.floor(Math.random() * names.length)]);
+
+// #46
+let getData = function(url) {}; // anonymuos function with arameter
+// function getData() {};
+
+// #47
+HelloAgainAgain();
+
+function hello(){  
+    console.log('Hello!'); // 3
+};
+
+function helloAgain(){
+    console.log('Hello Again!'); // 2
+    hello();
+};
+
+function HelloAgainAgain(){
+    console.log('Hello Again Again!'); // 1 
+    helloAgain();
+};
+
+// #48
+let pokemons = ['Pikachu', "Charmander", "Bulbasaur", "Squirtle"];
+function printPokemons() {
+    for(let i=0; i < pokemons.length; i++) {
+        console.log("One awesome pokemon is " + pokemons[i]);
+    };
+};
+printPokemons();
+
+// #48
+let newString = '';
+function reverseString(str) {
+    for (let i = str.length - 1; i >= 0; i--) {
+        newString += str[i];
+    };
+    return newString;
+};
+console.log(reverseString('hello'));
