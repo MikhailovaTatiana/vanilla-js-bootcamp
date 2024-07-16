@@ -237,9 +237,9 @@ console.log(desc());
 
 // #35
 function getYear(date) {
-    return date.substring(0, 4);
+    return date.substring(0, 4); // return date.slice(0, 4); (the same)
 };
-console.log('2019-10-14'); // 2019-10-14
+console.log('2019-10-14'); // 2019-10-14 
 
 // #36
 function calculate(a, b, operation) {
@@ -256,6 +256,60 @@ function calculate(a, b, operation) {
             return 'Somthing went wrong!'; 
     };
 };
-console.log(calculate(12, 3, '/'));
-console.log(calculate(4, 3, '*'));
-console.log(calculate(12, 2, ':'));
+console.log(calculate(12, 3, '/')); // 4
+console.log(calculate(4, 3, '*')); // 12
+console.log(calculate(12, 2, ':')); // Somthing went wrong!
+
+// #37
+function compareThis(a, b) {
+    if (a === b) return true;
+    return false;
+};
+console.log(compareThis(1, 1)); // true
+console.log(compareThis(3, 1)); // false
+
+// #38
+function between(x) {
+    if (x >= 20 && x <= 40) return true;
+    return false;
+};
+console.log(between(30)); // true
+console.log(between(50)); // false
+
+// #39
+function getMeTheLongestArr(a, b) {
+    if (a.length > b.length) return a;
+    return b;
+};
+console.log(getMeTheLongestArr([1,2], ['A','B','C'])); // ['A', 'B', 'C']
+
+// #40
+console.log(Math.floor(1337.51)); // 1337
+
+// #41
+console.log(Math.ceil(1337.48)); // 1338
+
+// #42
+console.log(Math.round(1337.497)); // 1337
+
+// #43
+function random(max) {
+    return Math.floor(Math.random() * max);
+};
+console.log(random(10000));
+
+// #44
+function randomPassword(n) {
+    let pass = '';
+    let chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    for (let i = 0; i < n; i++) {
+        let randChar = chars[(Math.floor(Math.random() * chars.length))];
+        pass += randChar;
+    }
+    return pass;
+};
+console.log(randomPassword(10)); // e3va93hlfz
+
+// #45
+names = ['Sixten', 'Eva', 'Ali', 'Kim', 'Greger', 'Alicia'];
+console.log(names[Math.floor(Math.random() * names.length)]);
