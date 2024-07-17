@@ -344,7 +344,7 @@ function printPokemons() {
 };
 printPokemons();
 
-// #48
+// #49
 let newString = '';
 function reverseString(str) {
     for (let i = str.length - 1; i >= 0; i--) {
@@ -353,3 +353,53 @@ function reverseString(str) {
     return newString;
 };
 console.log(reverseString('hello'));
+
+// #50
+// Fulfilled, rejected, pending, (settled).
+
+// #51
+let myObj = {
+    fullName: 'Joe Star',
+    age: 42,
+    email: 'joe@mail.nu'
+};
+function getMyData(data) {
+    return new Promise(function (resolve, reject) {
+        if (data) {
+          resolve(data);
+        } else {
+          reject("There is an Error!");
+        }
+    })};
+getMyData(myObj.age)
+    .then(data => console.log('Async success!', data))
+    .catch(error => console.log('Caught an error!', error));
+
+// #52
+async function getMyData2(data) {
+    return await new Promise(function (resolve, reject) {
+        if (data) {
+          resolve(data);
+        } else {
+          reject("There is an Error!");
+        }
+    })};
+getMyData2(myObj.name)
+    .then(data => console.log('Async success!', data))
+    .catch(error => console.log('Caught an error!', error));
+
+// #53
+const url = `https://api.chucknorris.io/jokes/random`;
+fetch(url)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Joke to you:', data.value);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
