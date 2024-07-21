@@ -403,3 +403,34 @@ fetch(url)
     .catch(error => {
         console.error('Error:', error);
     });
+
+// #54
+const url_1 = `https://jsonplaceholder.typicode.com/posts`;
+let data = {
+    id: 1,
+    joke: 'How many ears does Spock have? - Three; Left, right and the final front ear.',
+    funny: true
+};
+fetch(url_1, { 
+    method: 'POST', 
+    body: JSON.stringify(data),
+    headers: {"Content-Type": "application/json"}
+})
+.then(res => res.json())
+.then(res => console.log(res))
+.catch(res => console.log(res));
+
+// #55
+const url_2 = `https://jsonplaceholder.typicode.com/posts/1`;
+fetch(url_2, { 
+    method: 'PUT', 
+    body: JSON.stringify({
+        id: 1,
+        joke: 'How many ears does Spock have? - Ahaha)))',
+        funny: true,
+    }),
+    headers: {"Content-Type": "application/json"}
+})
+.then(res => res.json())
+.then(res => console.log(res))
+.catch(res => console.log(res));
